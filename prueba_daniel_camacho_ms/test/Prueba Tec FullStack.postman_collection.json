@@ -1,0 +1,482 @@
+{
+	"info": {
+		"_postman_id": "3e8d7db2-8770-4ea6-b11f-88bfd3efde0f",
+		"name": "Prueba Tec FullStack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21693474"
+	},
+	"item": [
+		{
+			"name": "GetAll",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Capacidad -> 1 GetAll",
+							"pm.test(\"Validacion de propiedades requeridas de retorno\", function () {",
+							"",
+							"    pm.expect(pm.response.text()).to.include(\"id\");",
+							"    pm.expect(pm.response.text()).to.include(\"nombre\");",
+							"    pm.expect(pm.response.text()).to.include(\"autor\");",
+							"    pm.expect(pm.response.text()).to.include(\"editorial\");",
+							"    pm.expect(pm.response.text()).to.include(\"fecha\");",
+							"    pm.expect(pm.response.text()).to.include(\"numeroPag\");",
+							"    pm.expect(pm.response.text()).to.include(\"stock\");",
+							"    pm.expect(pm.response.text()).to.include(\"valor\");",
+							"    pm.expect(pm.response.text()).to.include(\"isbn\");",
+							"   ",
+							"});",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Tiempo de respuesta es menor a 5s\", () => {",
+							"  pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"});",
+							"",
+							"pm.test(\"Si la respuesta contienen Content-Type \", () => {",
+							"  pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"Validar formato del Content-Type de la respuesta\", () => {",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+							"});",
+							"",
+							"pm.test(\"Validar formato del Content-Type\", () => {",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:9093/book",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9093",
+					"path": [
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByBookName",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Capacidad -> 2 GetByBookName",
+							"pm.test(\"Validacion de propiedades requeridas de retorno\", function () {",
+							"",
+							"    pm.expect(pm.response.text()).to.include(\"id\");",
+							"    pm.expect(pm.response.text()).to.include(\"nombre\");",
+							"    pm.expect(pm.response.text()).to.include(\"autor\");",
+							"    pm.expect(pm.response.text()).to.include(\"editorial\");",
+							"    pm.expect(pm.response.text()).to.include(\"fecha\");",
+							"    pm.expect(pm.response.text()).to.include(\"numeroPag\");",
+							"    pm.expect(pm.response.text()).to.include(\"stock\");",
+							"    pm.expect(pm.response.text()).to.include(\"valor\");",
+							"    pm.expect(pm.response.text()).to.include(\"isbn\");",
+							"   ",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Tiempo de respuesta es menor a 5s\", () => {",
+							"  pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"});",
+							"",
+							"pm.test(\"Si la respuesta contienen Content-Type \", () => {",
+							"  pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"Validar formato del Content-Type de la respuesta\", () => {",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+							"});",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:9093/book/nombre/Ficciones",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9093",
+					"path": [
+						"book",
+						"nombre",
+						"Ficciones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateBook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Capacidad -> 3 CreateBook",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.test(\"Tiempo de respuesta es menor a 5s\", () => {",
+							"  pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"});",
+							"",
+							"pm.test(\"Si la peticion contienen Content-Type \", () => {",
+							"  pm.request.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"Validar formato del Content-Type de la peticion\", () => {",
+							"  pm.expect(pm.request.headers.get('Content-Type')).to.eql('application/json');",
+							"});",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"nombre\": \"Libro de prueba RERORNO ID\",\n        \"autor\": \"Gabriel Garcias Marquez\",\n        \"editorial\": \"leerColombia\",\n        \"fecha\": \"18/03/2005\",\n        \"numeroPag\": 180,\n        \"stock\": 23,\n        \"valor\": 56000.0,\n        \"isbn\":  \"{{$randomCountryCode}}\",\n        \"tematica\": \"Novela\"\n    }\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9093/book",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9093",
+					"path": [
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuyBook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Capacidad -> 4 Comprar un libro",
+							"pm.test(\"Retorno de solo propiedades requeridas id,nombre,valor\", function () {",
+							"",
+							"    pm.expect(pm.response.text()).to.include(\"libroId\");",
+							"    pm.expect(pm.response.text()).to.include(\"libroName\");",
+							"    pm.expect(pm.response.text()).to.include(\"valor\");",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"const jsonData = pm.response.json();",
+							"pm.test(\"Validar tipo de dato\", () => {",
+							"",
+							"  pm.expect(jsonData.libroName).to.be.a(\"string\");",
+							"  pm.expect(jsonData.libroId).to.be.a(\"number\");",
+							"  pm.expect(jsonData.valor).to.be.an(\"number\");",
+							"",
+							"});",
+							"",
+							"pm.test(\"Tiempo de respuesta es menor a 5s\", () => {",
+							"  pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"});",
+							"",
+							"pm.test(\"Si la peticion y respuesta contienen Content-Type \", () => {",
+							"  pm.request.to.have.header(\"Content-Type\");",
+							"  pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"Validar formato del Content-Type de peticion y respuesta\", () => {",
+							"  pm.expect(pm.request.headers.get('Content-Type')).to.eql('application/json');",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":5,\n    \"cantidad\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9093/book/buy",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9093",
+					"path": [
+						"book",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateStock",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Capacidad -> 5 Agregar stock de un libro",
+							"pm.test(\"Retorno de atributos tabla libro\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"id\");",
+							"    pm.expect(pm.response.text()).to.include(\"nombre\");",
+							"    pm.expect(pm.response.text()).to.include(\"autor\");",
+							"    pm.expect(pm.response.text()).to.include(\"editorial\");",
+							"    pm.expect(pm.response.text()).to.include(\"fecha\");",
+							"    pm.expect(pm.response.text()).to.include(\"numeroPag\");",
+							"    pm.expect(pm.response.text()).to.include(\"stock\");",
+							"    pm.expect(pm.response.text()).to.include(\"valor\");",
+							"    pm.expect(pm.response.text()).to.include(\"isbn\");",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"const jsonData = pm.response.json();",
+							"pm.test(\"Validar tipo de dato\", () => {",
+							"",
+							"  pm.expect(jsonData.id).to.be.a(\"number\");",
+							"  pm.expect(jsonData.nombre).to.be.a(\"string\");",
+							"  pm.expect(jsonData.valor).to.be.an(\"number\");",
+							"    pm.expect(jsonData.stock).to.be.an(\"number\");",
+							"",
+							"});",
+							"",
+							"pm.test(\"Tiempo de respuesta es menor a 5s\", () => {",
+							"  pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"});",
+							"",
+							"pm.test(\"Si la peticion y respuesta contienen Content-Type \", () => {",
+							"  pm.request.to.have.header(\"Content-Type\");",
+							"  pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"Validar formato del Content-Type de peticion y respuesta\", () => {",
+							"  pm.expect(pm.request.headers.get('Content-Type')).to.eql('application/json');",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n   {\n       \"stock\": 10,\n       \"valor\":45000\n   }\n  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9093/book/7",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9093",
+					"path": [
+						"book",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllVentas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Capacidad -> 6 Bonus:2 Consulta de ventas",
+							"pm.test(\"Validacion de propiedades requeridas de retorno\", function () {",
+							"",
+							"    pm.expect(pm.response.text()).to.include(\"id\");",
+							"    pm.expect(pm.response.text()).to.include(\"libroId\");",
+							"    pm.expect(pm.response.text()).to.include(\"libroName\");",
+							"    pm.expect(pm.response.text()).to.include(\"fechaVenta\");",
+							"    pm.expect(pm.response.text()).to.include(\"cantidad\");",
+							"   ",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Tiempo de respuesta es menor a 5s\", () => {",
+							"  pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"});",
+							"",
+							"pm.test(\"Si la respuesta contienen Content-Type \", () => {",
+							"  pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"Validar formato del Content-Type de la respuesta\", () => {",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');",
+							"});",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:9093/book/allVentas",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9093",
+					"path": [
+						"book",
+						"allVentas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBookById",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:9093/book/id/4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9093",
+					"path": [
+						"book",
+						"id",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

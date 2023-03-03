@@ -1,0 +1,92 @@
+.tamañoEncabezado {
+ 
+    display: block;
+    width: 100%
+}
+/*
+#header {
+    opacity: 0.9;
+    height: 100px;
+    background-image: url("https://www.shutterstock.com/image-photo/honolulu-hawaii-usa-may-23-260nw-280705019.jpg" );
+    background-position: center;
+}
+
+.img {
+
+    width: 125px;
+    height: 100px;
+    position: relative;
+    left: -10px;
+    top: -56px;
+}
+
+.wordHeader {
+    background-color: rgba(0, 0, 0, 0.096);
+    bottom: 10px;
+    font-size: 60px;
+    color: rgb(252, 252, 252);
+    font-family: cursive;
+    text-align: center;
+
+}
+
+.wordHeader:hover {
+    background-color: rgba(0, 0, 0, 0.295);
+    font-size: 83px;;
+  
+
+}
+*/
+
+
+
+
+
+  
+
+
+
+
+
+
+#logo{
+
+    height: 135px;
+    width: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  .topnav {
+    margin: 0;
+    background-color: #2aa12a86;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  float: right;
+}

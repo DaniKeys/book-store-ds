@@ -1,0 +1,112 @@
+
+body {
+    background-color: #000000;
+    
+}
+
+ #spaceForm{
+    top:500px;
+    height: 350px;
+ }  
+
+ .btn-group {
+    width: 50px;
+    height: 50px;
+  }
+  
+
+.display-4 {
+    font-size: 50px;
+    background-color: #000000ce;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 20px 0;
+}
+#spaceButtonSearch{
+    margin-top: 15px;
+    text-align: center;
+}
+#spaceButton{
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+.form-control {
+    color: rgb(0, 0, 0);
+    background-color: #afbcd1;
+}
+
+
+.needs-validation {
+
+    width: 50%;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.dateOfBirthInput {
+    margin: 0 auto;
+    background-color: #000000;
+}
+
+.center-align {
+    color: rgb(231, 225, 216);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.form-select {
+    background-color: #afbcd1;
+}
+
+.fa-shopping-cart {
+    width: 50%;
+    height: 300px;
+}
+
+.custom-label {
+    color: rgb(107, 107, 119);
+}
+
+li {
+    color: aliceblue;
+}
+
+thead {
+    margin: 20px 0;
+    width: 5%;
+    height: 100px;
+    color: rgb(255, 255, 255);
+}
+
+.colorFields {
+    color: rgb(255, 255, 255);
+}
+
+.getSale {
+    text-align: center;
+}
+
+.hide-titles {
+    display: none;
+}
+.fa-shopping-cart:hover {
+    width: 75%;
+    height: 300px;
+}
+
+/*
+.dropdown-menu-dark{
+
+    color: aliceblue;
+}
+*/
+/*
+.loading{
+   color: aliceblue; 
+}
+*/
